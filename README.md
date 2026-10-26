@@ -26,7 +26,7 @@ cd ..
 # 入手先: Hugging Face の pollen-robotics/microduck-policies
 
 # このリポジトリを同じ階層に置く
-git clone <このリポジトリの URL> microduck-tidy-up
+git clone <repository-url> microduck-tidy-up
 cd microduck-tidy-up
 ```
 

@@ -11,8 +11,6 @@ Physical AI 応用 1 講座の最終課題。
 - **BeakPick**:しゃがむ → くちばしで挟む → 持ったまま立ち上がる
 - **SearchWalk**:うつむいたまま歩く(上流の歩行に追加学習)
 
-上流の [pollen-robotics/microduck_rl](https://github.com/pollen-robotics/microduck_rl) は編集せずに読み込んで使う。このリポジトリは自作部分のみ。
-
 ## セットアップ
 
 Linux(WSL2 可)と [uv](https://docs.astral.sh/uv/) が必要。学習する場合のみ CUDA GPU も必要。

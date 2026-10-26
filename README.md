@@ -25,7 +25,8 @@ cd ..
 # 公式の歩行・立ちポリシー(alpha_walking.onnx, alpha_stand.onnx)を policies/ に置く
 # 入手先: Hugging Face の pollen-robotics/microduck-policies
 
-git clone https://github.com/yuto-ts/microduck-tidy-up
+# このリポジトリを同じ階層に置く
+git clone <このリポジトリの URL> microduck-tidy-up
 cd microduck-tidy-up
 ```
 

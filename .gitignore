@@ -1,0 +1,13 @@
+scratch/
+videos/
+*.mp4
+__pycache__/
+*.pyc
+logs/
+train_*.log
+output.onnx
+# intermediate checkpoints (only the policies listed in README are published)
+onnx/sw1_5500.onnx
+onnx/sw2_6000.onnx
+onnx/v2_500.onnx
+onnx/v2_2250.onnx

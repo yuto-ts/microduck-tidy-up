@@ -101,8 +101,9 @@ import subprocess
 clips = []
 for key in KEYS:
     spec = CATALOG[key]
-    subprocess.run([sys.executable, __file__, "--clip", ONNX, OUT, key, str(SEED), str(COLS)],
-                   check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    if not os.path.exists(os.path.join(CLIP_DIR, f"{key}.txt")):   # resume: reuse finished clips
+        subprocess.run([sys.executable, __file__, "--clip", ONNX, OUT, key, str(SEED), str(COLS)],
+                       check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     ok = open(os.path.join(CLIP_DIR, f"{key}.txt")).read().strip() == "1"
     frames = [f for f in imageio.get_reader(os.path.join(CLIP_DIR, f"{key}.mp4"))]
     print(f"{spec.name_ja:20s} {'成功' if ok else '失敗'}", flush=True)

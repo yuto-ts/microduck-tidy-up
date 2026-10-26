@@ -42,8 +42,8 @@ def card(lines, secs, image=None):
     top = 120
     if image is not None:
         pic = Image.open(image).convert("RGB")
-        pic.thumbnail((520, 520))
-        im.paste(pic, (W - pic.width - 80, (H - pic.height) // 2))
+        pic.thumbnail((300, 300))
+        im.paste(pic, (W - pic.width - 60, H - pic.height - 40))   # bottom-right, under the text
     y = top
     for text, size, colour, bold in lines:
         font = FB[size] if bold and size in FB else F[size]
@@ -63,7 +63,8 @@ def tag(img, text):
 def fit(frame):
     """Scale a frame into the 1280x720 canvas, letterboxed on the dark background."""
     pic = Image.fromarray(frame)
-    pic.thumbnail((W, H))
+    k = min(W / pic.width, H / pic.height)                      # enlarge or shrink to fit
+    pic = pic.resize((round(pic.width * k), round(pic.height * k)), Image.LANCZOS)
     im = Image.new("RGB", (W, H), BG)
     im.paste(pic, ((W - pic.width) // 2, (H - pic.height) // 2))
     return im

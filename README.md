@@ -1,4 +1,4 @@
-# microduck_fetch
+# microduck-tidy-up
 
 小型二足ロボット Microduck(Pollen Robotics)が、頭のカメラで床の物を探し、歩いて近づき、くちばしで拾って片付けエリアへ運ぶ。
 Physical AI 応用 1 講座の最終課題として作成した。すべて MuJoCo シミュレーション上で動作する。
@@ -36,11 +36,11 @@ cd ..
 #    別の場所に置く場合は MICRODUCK_POLICIES=<そのディレクトリ> を指定する
 
 # 3. このリポジトリ
-git clone <このリポジトリ> microduck_fetch
-cd microduck_fetch
+git clone <このリポジトリ> microduck-tidy-up
+cd microduck-tidy-up
 ```
 
-以下のコマンドはすべて `microduck_fetch/` 直下で実行する。
+以下のコマンドはすべて `microduck-tidy-up/` 直下で実行する。
 `run.sh` は上流の venv(`MICRODUCK_VENV`、既定 `~/.venvs/microduck_rl`)の python をそのまま使う。上流環境へは何もインストールしない。
 上流を別の場所に置いた場合は `MICRODUCK_RL=<そのパス>` を指定する。
 
@@ -137,7 +137,7 @@ bash run.sh python scripts/mjlab_cli.py export Mjlab-BeakPick-Flat-MicroDuck \
 
 ## 探して拾って片付ける(Fetch)
 
-`src/microduck_fetch/fetch.py` の状態機械が、学習済みのポリシーを切り替えて使う。
+`src/microduck_tidy/fetch.py` の状態機械が、学習済みのポリシーを切り替えて使う。
 
 | 層 | 中身 |
 |---|---|
@@ -182,13 +182,13 @@ v3wide は、置き位置を広げて追加学習したのに、木製キュー�
 ## 構成
 
 ```
-src/microduck_fetch/beak.py          くちばし関節の追加(add_beak)とスクリプト制御サーボ(BeakServo)
-src/microduck_fetch/sim.py           BAM サーボ付きローダー(上流 infer_policy と同じ処理+くちばし)、物体
-src/microduck_fetch/props.py         把持候補の物体カタログ
-src/microduck_fetch/pick_profile.py  BeakPick の位相・規定位置(学習と推論で共有)
-src/microduck_fetch/runner.py        CPU 推論ランナー(歩行・立ちポリシー+BeakPick+くちばし、指令遅延 20 ms)
-src/microduck_fetch/fetch.py         知覚(前向きカメラ)と探索〜片付けの状態機械
-src/microduck_fetch/tasks/           BeakPick / SearchWalk タスク定義(環境設定・報酬・観測・リセット)
+src/microduck_tidy/beak.py          くちばし関節の追加(add_beak)とスクリプト制御サーボ(BeakServo)
+src/microduck_tidy/sim.py           BAM サーボ付きローダー(上流 infer_policy と同じ処理+くちばし)、物体
+src/microduck_tidy/props.py         把持候補の物体カタログ
+src/microduck_tidy/pick_profile.py  BeakPick の位相・規定位置(学習と推論で共有)
+src/microduck_tidy/runner.py        CPU 推論ランナー(歩行・立ちポリシー+BeakPick+くちばし、指令遅延 20 ms)
+src/microduck_tidy/fetch.py         知覚(前向きカメラ)と探索〜片付けの状態機械
+src/microduck_tidy/tasks/           BeakPick / SearchWalk タスク定義(環境設定・報酬・観測・リセット)
 scripts/mjlab_cli.py                 タスクを登録してから mjlab の train / play / export を呼ぶ
 scripts/                             検証・評価・動画作成スクリプト
 onnx/                                学習済みポリシー

@@ -7,9 +7,9 @@ import os, sys
 os.environ.setdefault("MUJOCO_GL", "egl")
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 import numpy as np, mujoco
-from microduck_fetch import sim as S
+from microduck_tidy import sim as S
 
-from microduck_fetch.runner import POLICIES as POL
+from microduck_tidy.runner import POLICIES as POL
 mode = sys.argv[1]
 vx = float(sys.argv[2]) if len(sys.argv) > 2 else 0.3
 secs = float(sys.argv[3]) if len(sys.argv) > 3 else 8.0

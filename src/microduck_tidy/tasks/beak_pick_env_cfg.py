@@ -4,7 +4,7 @@ holding it.
 Built on upstream's ground-pick task (same phase command, return-pose and stability
 terms, same 61-D actor observation / 14-D action contract) with three additions:
 
-1. Robot model with an articulated beak (`microduck_fetch.beak.add_beak`). The mouth is a
+1. Robot model with an articulated beak (`microduck_tidy.beak.add_beak`). The mouth is a
    15th MuJoCo actuator that the POLICY DOES NOT DRIVE: the action term is restricted to
    the 14 servo joints and a per-step hook opens/closes the beak by phase, the way the real
    robot's daemon commands the mouth outside the policy.
@@ -46,11 +46,11 @@ from mjlab_microduck.tasks.microduck_ground_pick_env_cfg import (
 )
 from mjlab_microduck.tasks.symmetry import PpoWithSymmetryCfg
 
-from microduck_fetch.beak import add_beak, PROP_CONTYPE, PROP_CONAFFINITY
-from microduck_fetch.tasks import mdp
+from microduck_tidy.beak import add_beak, PROP_CONTYPE, PROP_CONAFFINITY
+from microduck_tidy.tasks import mdp
 
 # -- phase profile / pick spot (shared with the CPU evaluation runner) --------------------
-from microduck_fetch.pick_profile import (  # noqa: E402
+from microduck_tidy.pick_profile import (  # noqa: E402
     GP_PERIOD, DESCENT_END, HOLD_END, RISE_END, OPEN_START, CLOSE_PHASE, OPEN_ANGLE,
     NOMINAL, NOISE_X, NOISE_Y, OFFSET_CLIP,
 )
@@ -227,7 +227,7 @@ BeakPickRlCfg = RslRlOnPolicyRunnerCfg(
         learning_rate=1.0e-3, schedule="adaptive", gamma=0.99, lam=0.95,
         desired_kl=0.01, max_grad_norm=1.0, symmetry_cfg=None,
     ),
-    wandb_project="microduck_fetch",
+    wandb_project="microduck_tidy",
     experiment_name="beak_pick",
     run_name="beak_pick",
     save_interval=250,

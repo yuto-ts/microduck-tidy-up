@@ -13,8 +13,8 @@ import numpy as np
 import mujoco
 import imageio
 
-from microduck_fetch import sim as S
-from microduck_fetch.props import GRASPABLE, BORDERLINE
+from microduck_tidy import sim as S
+from microduck_tidy.props import GRASPABLE, BORDERLINE
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else "showcase.png"
 scene = S.SCENE_APARTMENT if len(sys.argv) > 2 and sys.argv[2] == "apartment" else S.SCENE_FLAT

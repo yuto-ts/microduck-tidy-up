@@ -15,9 +15,9 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 import numpy as np
 import mujoco
 
-from microduck_fetch import sim as S, pick_profile as P
-from microduck_fetch.props import CATALOG, GRASPABLE, BORDERLINE
-from microduck_fetch.runner import PickRunner
+from microduck_tidy import sim as S, pick_profile as P
+from microduck_tidy.props import CATALOG, GRASPABLE, BORDERLINE
+from microduck_tidy.runner import PickRunner
 
 ONNX = sys.argv[1]
 TRIALS = int(sys.argv[2]) if len(sys.argv) > 2 else 5

@@ -6,8 +6,8 @@ usage: python scripts/grasp_fixed.py [size_m=0.020] [mass_kg=0.010] [open_frac=0
 import os, sys; os.environ.setdefault("MUJOCO_GL","egl")
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 import mujoco, numpy as np, imageio
-from microduck_fetch.beak import load_spec_with_beak, BeakServo, PROP_CONTYPE, PROP_CONAFFINITY
-from microduck_fetch.sim import SCENE_FLAT as X
+from microduck_tidy.beak import load_spec_with_beak, BeakServo, PROP_CONTYPE, PROP_CONAFFINITY
+from microduck_tidy.sim import SCENE_FLAT as X
 OPEN=float(sys.argv[3]) if len(sys.argv)>3 else 0.8
 SIZE=float(sys.argv[1]) if len(sys.argv)>1 else 0.020; MASS=float(sys.argv[2]) if len(sys.argv)>2 else 0.010
 spec=load_spec_with_beak(X)

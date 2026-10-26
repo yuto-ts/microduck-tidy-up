@@ -1,4 +1,4 @@
-"""Register microduck_fetch tasks with mjlab's task registry.
+"""Register microduck_tidy tasks with mjlab's task registry.
 
 Importing this module also imports upstream `mjlab_microduck.tasks` (its registrations
 and the shared runner class). The launchers in scripts/ import it before handing over to
@@ -20,7 +20,7 @@ register_mjlab_task(
 
 # Wide placement window: the pick after walking up to an object. Same obs/action layout
 # and experiment folder as BeakPick so it can resume (fine-tune) from a BeakPick run.
-from microduck_fetch.pick_profile import (  # noqa: E402
+from microduck_tidy.pick_profile import (  # noqa: E402
     WIDE_NOISE_X, WIDE_NOISE_Y, WIDE_YAW_RANGE, WIDE_OFFSET_CLIP)
 
 _WIDE = dict(noise_x=WIDE_NOISE_X, noise_y=WIDE_NOISE_Y, yaw_range=WIDE_YAW_RANGE,

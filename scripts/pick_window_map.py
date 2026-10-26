@@ -10,9 +10,9 @@ os.environ.setdefault("MUJOCO_GL", "egl")
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "src"))
 import numpy as np
 
-from microduck_fetch import sim as S, pick_profile as P
-from microduck_fetch.props import CATALOG
-from microduck_fetch.runner import PickRunner
+from microduck_tidy import sim as S, pick_profile as P
+from microduck_tidy.props import CATALOG
+from microduck_tidy.runner import PickRunner
 
 ONNX = sys.argv[1]
 KEY = sys.argv[2] if len(sys.argv) > 2 else "wood_cube_20"

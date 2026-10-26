@@ -12,7 +12,7 @@ import numpy as np
 import onnxruntime as ort
 import torch
 
-import microduck_fetch.tasks  # noqa: F401
+import microduck_tidy.tasks  # noqa: F401
 from mjlab.envs import ManagerBasedRlEnv
 from mjlab.tasks.registry import load_env_cfg
 

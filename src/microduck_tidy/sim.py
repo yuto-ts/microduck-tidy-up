@@ -62,7 +62,7 @@ class Sim:
 def build(scene=SCENE_FLAT, props=(), dt=0.005, vin=7.4, vin_drop_gain=0.1, bam=True,
           catalog=(), extra=None) -> Sim:
     """props: simple `Prop` boxes. catalog: (name, PropSpec, (x, y), yaw) tuples from
-    `microduck_fetch.props` (cubes, cylinders, spheres with real sizes/masses)."""
+    `microduck_tidy.props` (cubes, cylinders, spheres with real sizes/masses)."""
     ip = upstream_infer()
     spec = add_beak(mujoco.MjSpec.from_file(scene))
     for p in props:

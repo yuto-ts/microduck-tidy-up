@@ -1,4 +1,4 @@
-"""Run an mjlab CLI (train / play / export) with microduck_fetch tasks registered.
+"""Run an mjlab CLI (train / play / export) with microduck_tidy tasks registered.
 
 usage: python scripts/mjlab_cli.py train  Mjlab-BeakPick-Flat-MicroDuck --env.scene.num-envs 2048
        python scripts/mjlab_cli.py export Mjlab-BeakPick-Flat-MicroDuck --checkpoint-file <model_N.pt>
@@ -10,7 +10,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "src"))
 
 cmd = sys.argv.pop(1)
-import microduck_fetch.tasks  # noqa: E402,F401  (registers our tasks)
+import microduck_tidy.tasks  # noqa: E402,F401  (registers our tasks)
 
 if cmd == "train":
     from mjlab.scripts.train import main

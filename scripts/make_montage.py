@@ -18,9 +18,9 @@ import mujoco
 import imageio
 from PIL import Image, ImageDraw, ImageFont
 
-from microduck_fetch import sim as S, pick_profile as P
-from microduck_fetch.props import CATALOG, GRASPABLE, BORDERLINE
-from microduck_fetch.runner import PickRunner
+from microduck_tidy import sim as S, pick_profile as P
+from microduck_tidy.props import CATALOG, GRASPABLE, BORDERLINE
+from microduck_tidy.runner import PickRunner
 
 CLIP_MODE = sys.argv[1] == "--clip"
 if CLIP_MODE:

@@ -13,10 +13,10 @@ import math
 import numpy as np
 import mujoco
 
-from microduck_fetch import sim as S, pick_profile as P
-from microduck_fetch.props import CATALOG
-from microduck_fetch.runner import PickRunner
-from microduck_fetch.fetch import FrontCamPerception, FetchController, FetchParams, Tray
+from microduck_tidy import sim as S, pick_profile as P
+from microduck_tidy.props import CATALOG
+from microduck_tidy.runner import PickRunner
+from microduck_tidy.fetch import FrontCamPerception, FetchController, FetchParams, Tray
 
 ONNX = sys.argv[1]
 OUT = sys.argv[2] if len(sys.argv) > 2 and sys.argv[2] != "-" else None

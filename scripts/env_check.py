@@ -12,9 +12,9 @@ import numpy as np
 import torch
 import mujoco
 
-import microduck_fetch.tasks  # noqa: F401
-from microduck_fetch.tasks.beak_pick_env_cfg import make_beak_pick_env_cfg, NOMINAL
-from microduck_fetch.tasks import mdp
+import microduck_tidy.tasks  # noqa: F401
+from microduck_tidy.tasks.beak_pick_env_cfg import make_beak_pick_env_cfg, NOMINAL
+from microduck_tidy.tasks import mdp
 from mjlab.envs import ManagerBasedRlEnv
 from mjlab.managers.scene_entity_config import SceneEntityCfg
 

@@ -9,9 +9,9 @@ import os, sys
 os.environ.setdefault("MUJOCO_GL", "egl")
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 import numpy as np, mujoco
-from microduck_fetch import sim as S
+from microduck_tidy import sim as S
 
-from microduck_fetch.runner import POLICIES as POL
+from microduck_tidy.runner import POLICIES as POL
 args = sys.argv[1:]
 cube_xy = (float(args[0]), float(args[1])) if len(args) >= 2 else None
 ph_open = float(args[2]) if len(args) > 2 else 0.05
